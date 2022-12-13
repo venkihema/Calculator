@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [result, setResult] = useState("");
+
+  const onclickHandler = (e) => {
+    setResult(result.concat(e.target.name));
+  };
+  // console.log(result);
+  const resultHandler = () => {
+    setResult(Function(result));
+  };
+  const clearHandler = () => {
+    setResult("");
+  };
+  const sliceHandler = () => {
+    setResult(result.slice(0, -1));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="displayResult">
+        <input type="text" value={result} />
+      </div>
+      <div>
+        <button onClick={onclickHandler} name="1">
+          1
+        </button>
+        <button onClick={onclickHandler} name="2">
+          2
+        </button>
+        <button onClick={onclickHandler} name="3">
+          3
+        </button>
+        <button onClick={onclickHandler} name="4">
+          4
+        </button>
+        <button onClick={onclickHandler} name="5">
+          5
+        </button>
+        <button onClick={onclickHandler} name="+">
+          +
+        </button>
+        <button onClick={resultHandler}>=</button>
+      </div>
+      <button onClick={clearHandler}>Clear</button>
+      <button onClick={sliceHandler}>C</button>
+      <br />
     </div>
   );
 }
