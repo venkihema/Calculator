@@ -41,6 +41,8 @@ button {
   border: 1px solid rgb(10, 10, 10);
   border-radius: 5px;
   background: linear-gradient(rgb(118, 118, 168), black);
+  color: wheat;
+  font-size: 20px;
 }
 .btn1 {
   width: 190px;
